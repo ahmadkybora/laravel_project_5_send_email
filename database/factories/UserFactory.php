@@ -28,7 +28,6 @@ class UserFactory extends Factory
             'last_name' => $this->faker->name(),
             'username' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
-            'email_verified_at' => now(),
             'mobile' => $this->faker->phoneNumber('201-886-0269 x3767'),
             'home_phone' => $this->faker->phoneNumber('201-886-0269 x3767'),
             'work_phone' => $this->faker->phoneNumber('201-886-0269 x3767'),
@@ -37,6 +36,7 @@ class UserFactory extends Factory
             'password' => Hash::make(12345678),
             'remember_token' => Str::random(10),
             'status' => 'ACTIVE',
+            'information' => '',
             'image' => ''
         ];
     }

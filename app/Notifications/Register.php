@@ -43,15 +43,19 @@ class Register extends Notification
     public function toMail($notifiable)
     {
         $timestamp = Carbon::now()->timestamp;
-        $signature = Hash::make($notifiable->id . $notifiable->secret_key . $timestamp);
+        $signature = Hash::make($notifiable->id . $notifiable->username . $timestamp);
         $user = $notifiable;
+        //$url = 'http://localhost:8000/api/verify-email/user=' . $user->username . '/signature=' . $signature;
+        $url = 'http://localhost:8000/api/verify-email';
         return (new MailMessage)
         ->subject('Activate Your Account')
         ->markdown('mail.user.register', 
-        ['signature' => $signature, 
-        'timestamp' => $timestamp, 
-        'user' => $notifiable
-    ]);
+        [
+            'url' => $url,
+            'signature' => $signature, 
+            'timestamp' => $timestamp, 
+            'user' => $user
+        ]);
     }
 
     /**

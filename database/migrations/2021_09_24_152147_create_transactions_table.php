@@ -20,7 +20,7 @@ class CreateTransactionsTable extends Migration
             $table->string('transaction_code');
             $table->string('amount');
             $table->text('description');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->enum('status', ['ACTIVE', 'DEACTIVE', 'PENDING', 'SUSPENDED']);
             $table->timestamps();
         });

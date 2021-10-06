@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
             $table->text('work_address')->nullable();
             $table->text('home_address')->nullable();
             $table->string('image')->nullable();
+            $table->json('information')->nullable();
             $table->enum('status', ['ACTIVE', 'DEACTIVE', 'SUSPENDED', 'PENDING'])->default('ACTIVE');
             $table->rememberToken();
             $table->timestamps();

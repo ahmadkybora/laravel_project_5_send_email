@@ -18,7 +18,7 @@ class CreateBanksTable extends Migration
             $table->string('account_number');
             $table->string('name');
             $table->string('description');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->enum('status', ['ACTIVE', 'DEACTIVE', 'PENDING', 'SUSPENDED']);
             $table->timestamps();
         });

@@ -20,7 +20,7 @@ class CreateCartsTable extends Migration
             $table->string('quantity');
             $table->string('name');
             $table->text('description');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->enum('status', ['ACTIVE', 'DEACTIVE', 'PENDING', 'SUSPENDED']);
             $table->timestamps();
         });

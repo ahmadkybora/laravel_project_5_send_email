@@ -17,7 +17,6 @@ class CreatePermissionsTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->string('image');
             $table->enum('status', ['ACTIVE', 'DEACTIVE', 'PENDING', 'SUSPENDED']);
             $table->timestamps();
         });

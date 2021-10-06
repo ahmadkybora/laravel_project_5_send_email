@@ -1,9 +1,9 @@
 @component('mail::message')
 # Introduction
+<p>Dear{{ $user->first_name . $user->last_name }}Wellcome to My Repository</p>
+<p>please click this link to verify your mail</p>
 
-The body of your message.
-
-@component('mail::button', ['url' => ''])
+@component('mail::button', ['url' => route('verify-email', ['user' => $user->username, 'timestamp' => $timestamp, 'signature' => $signature])])
 Button Text
 @endcomponent
 

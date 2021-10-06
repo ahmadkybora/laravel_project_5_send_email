@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Product;
+use App\Models\ProductCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ProductFactory extends Factory
@@ -22,7 +22,12 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'categoryId' => ProductCategory::factory()->create()->id,
+            'name' => $this->faker->name(),
+            'price' => $this->faker->numberBetween(0, 9),
+            'description' => $this->faker->sentence(),
+            'image' => null,
+            'status' => 'ACTIVE'
         ];
     }
 }

@@ -42,6 +42,14 @@ class Handler extends ExceptionHandler
         });
 
         $this->renderable(function (NotFoundHttpException $e, $request) {
+            /*if ($e instanceof ) {
+                return response()->json([
+                    'state' => false,
+                    'message' => 'Your email address is not verified.!',
+                    'data' => null,
+                ], 403);
+            }*/
+
             if ($request->is('api/*')) {
                 return response()->json([
                     'state' => false,

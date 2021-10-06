@@ -27,6 +27,7 @@ class RegisterRequest extends FormRequest
      */
     public function rules()
     {
+        //dd("ok");
         return [
             'first_name' => ['bail', 'required', 'string', 'min:8', 'max:25'],
             'last_name' => ['bail', 'required', 'string', 'min:8', 'max:25'],
